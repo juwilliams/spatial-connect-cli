@@ -1,0 +1,4 @@
+# manifest.in
+exclude .gitignore
+include setup.cfg
+recursive-exclude *.egg-info *
