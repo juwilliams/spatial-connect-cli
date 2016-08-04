@@ -63,6 +63,10 @@ class Container(BaseCommand):
 		container.board = command_value
 		container.write()
 
+	def translate(self, command_value, container):
+		container.translate = bool(command_value)
+		container.write()
+
 	option_commands = {
 		'file_in_archive' : fileInArchive,
 		'format' : format,
@@ -73,5 +77,6 @@ class Container(BaseCommand):
 		'update_only' : updateOnly,
 		'has_attachments' : hasAttachments,
 		'view' : view,
-		'board' : board
+		'board' : board,
+		'translate' : translate
 	}

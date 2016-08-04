@@ -24,7 +24,7 @@ arguments:
 	FIELD_LENGTH         Data field data length (default: 255)
 	KEY                  Key field used for relationships (default: id)
 	WKID                 ArcGIS featureclass WKID (default: 4326)
-	COMMAND              Subcommand (see values below)
+	COMMAND              Sub-command (see values below)
 
 options:
   	-h, --help                                      Show this screen. 
@@ -53,13 +53,14 @@ formats:
 
 sub-commands:
 	container                                     Used in reset command. Rebuilds history.json, relationships.json and purges push/pull sub directories
-	container file_in_archive                     Modifies the file_in_archive in container.json
-	container format                              Modifies the format in container.json
-	container output_file                         Modifies the output_file in container.json
-	container key                                 Modifies the key in container.json
-	container relationships_dir                   Modifies the relationships_dir in container.json
-	container update_only                         Modifies the update_only in container.json
-	container has_attachments                     Modifies the has_attachments in container.json
+	container file_in_archive                     Modifies the file_in_archive field in container.json
+	container format                              Modifies the format field in container.json
+	container output_file                         Modifies the output_file field in container.json
+	container key                                 Modifies the key field in container.json
+	container relationships_dir                   Modifies the relationships_dir field in container.json
+	container update_only                         Modifies the update_only field in container.json
+	container has_attachments                     Modifies the has_attachments field in container.json
+	container transform 						  Modifies the transform field in container.json
 	running                                       Used in reset command. Clears the running_containers property in config.json.
 
 help:
