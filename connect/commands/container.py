@@ -63,8 +63,8 @@ class Container(BaseCommand):
 		container.board = command_value
 		container.write()
 
-	def translate(self, command_value, container):
-		container.translate = bool(command_value)
+	def transform(self, command_value, container):
+		container.transform = bool(command_value)
 		container.write()
 
 	option_commands = {
@@ -78,5 +78,5 @@ class Container(BaseCommand):
 		'has_attachments' : hasAttachments,
 		'view' : view,
 		'board' : board,
-		'translate' : translate
+		'transform' : transform
 	}
