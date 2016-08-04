@@ -32,7 +32,7 @@ options:
   	-n CONNECTION_NAME --name=CONNECTION_NAME       Container Name 
   	-g GEOMETRY --geometry=GEOMETRY                 Geometry type (point, polygon, line, polyline)
   	-d DESTINATION --dest=DESTINATION               Target System (WebEOC | ArcGIS) - Push Configuration 
-  	-s SOURCE --source=SOURCE                       Source System (WebEOC | ArcGIS) - Pull Configuration 
+  	-s SOURCE --source=SOURCE                       Source item, i.e. featureclass name (WebEOC | ArcGIS) - Pull Configuration 
 	-f FORMAT --format=FORMAT                       Response format from data source 
 	-k KEY --key=KEY                                Key field used for relationships
 	-t                                              Transform response
