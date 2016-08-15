@@ -52,6 +52,7 @@ class Container(BaseModel):
 
 		#	create history file to store uids that have been captured
 		self.createFile(self.path + '/relationships.json', '{"keys" : []}')
+		self.createFile(self.path + '/cache.json', '{"keys" : []}')
 		self.createFile(self.pull_dir + '/history.json', '{"uids" : []}')
 		self.createFile(self.push_dir + '/history.json', '{"uids" : []}')
 
@@ -77,6 +78,7 @@ class Container(BaseModel):
 
 		#	create history file to store uids that have been captured
 		self.createFile(self.path + '/relationships.json', '{"keys" : []}')
+		self.createFile(self.path + '/cache.json', '{"keys" : []}')
 		self.createFile(self.pull_dir + '/history.json', '{"uids" : []}')
 		self.createFile(self.push_dir + '/history.json', '{"uids" : []}')
 
