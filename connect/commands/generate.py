@@ -51,8 +51,38 @@ class Generate(BaseCommand):
 
 		return output
 
+	def transform(self):
+	#	generates a transform document for the input fields file
+		from connect.models import Fields
+		from connect.models import Field
+		import pkg_resources
+
+		#	load fields.json
+		fields = Fields.load(self.options)
+		xsl_fields = []
+		xsl_output = ''
+
+		resource_package = 'connect';
+		transform_path = '/'.join(('templates', 'transform.xsl'))
+		transform_field_path = '/'.join(('templates', 'transform_field.xsl'))
+
+		transform_template = pkg_resources.resource_string(resource_package, transform_path)
+		transform_field_template = pkg_resources.resource_string(resource_package, transform_field_path)
+
+		for field in fields.mappings:
+			xsl_field = transform_field_template.replace('[[FROM_FIELD]]', field.field_from)
+			xsl_field = xsl_field.replace('[[TO_FIELD]]', field.field_to)
+
+			xsl_fields.append(xsl_field)
+
+		xsl_output = transform_template.replace('[[FIELDS]]', "\r\n".join(xsl_fields))
+
+		with open('transform.xsl', 'w') as transform_output_file:
+			transform_output_file.write(xsl_output)
+
 	option_commands = {
 		'webeoc_input' : webeocInput,
-		'webeoc_display' : webeocDisplay
+		'webeoc_display' : webeocDisplay,
+		'transform' : transform
 	}
 

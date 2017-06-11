@@ -38,7 +38,11 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
     keywords = 'cli',
+    include_package_data = True,
     packages = find_packages(exclude=['docs']),
+    package_data = {
+        '': ['*.xsl']
+    },
     install_requires = ['docopt'],
     entry_points = {
         'console_scripts': [

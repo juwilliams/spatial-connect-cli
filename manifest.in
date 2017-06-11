@@ -1,4 +1,5 @@
 # manifest.in
 exclude .gitignore
 include setup.cfg
+include connect/templates/*.xsl
 recursive-exclude *.egg-info *
