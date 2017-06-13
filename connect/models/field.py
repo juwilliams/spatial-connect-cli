@@ -35,4 +35,3 @@ class Field(BaseModel):
 		self.field_from = ''
 		self.field_to = ''
 		self.tags = ''
-

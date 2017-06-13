@@ -67,6 +67,10 @@ class Container(BaseCommand):
 		container.transform = bool(command_value)
 		container.write()
 
+	def geometry(self, command_value, container):
+		container.geometry = command_value
+		container.write()
+
 	option_commands = {
 		'file_in_archive' : fileInArchive,
 		'format' : format,
@@ -78,5 +82,6 @@ class Container(BaseCommand):
 		'has_attachments' : hasAttachments,
 		'view' : view,
 		'board' : board,
-		'transform' : transform
+		'transform' : transform,
+		'geometry' : geometry
 	}

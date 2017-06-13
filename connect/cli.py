@@ -4,10 +4,10 @@ usage:
 	connect create CONNECTION_NAME -d DESTINATION -s SOURCE -f FORMAT -g GEOMETRY [-t] [-w WKID] [-r] [-k KEY]
 	connect create CONNECTION_NAME --dest=DESTINATION --source=SOURCE --format=FORMAT --geometry=GEOMETRY [-t] [--wkid=WKID] [-r] [--key=KEY]
 	connect container COMMAND [COMMAND_VALUE]
-	connect config
+	connect config [-lc]
 	connect register CONNECTION_NAME
 	connect unregister CONNECTION_NAME
-	connect addfield FIELD_FROM [FIELD_TO] [FIELD_TYPE] [FIELD_LENGTH]
+	connect fields COMMAND [COMMAND_VALUE] [TAGS] [FIELD_TO] [FIELD_TYPE] [FIELD_LENGTH]
 	connect removefield FIELD_FROM
 	connect generate FORMAT
 	connect reset COMMAND [COMMAND_VALUE]
@@ -39,6 +39,8 @@ options:
 	-w, --wkid                                      ArcGIS featureclass WKID (default: 4326)
 	-e, --extract                                   File in archive to extract
 	-r                                              Use relationships (maintains id and external id so updates are possible)
+	-l[c] 											List contents [c=containers]
+	--tag 											Field Tag
 
 examples:
   	connect create -n MyContainer -d WebEOC -f Features -t -i 15

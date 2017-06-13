@@ -2,7 +2,7 @@ from .create import *
 from .config import *
 from .register import *
 from .unregister import *
-from .addfield import *
+from .fields import *
 from .removefield import *
 from .generate import *
 from .container import *

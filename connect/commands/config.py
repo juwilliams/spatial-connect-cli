@@ -23,6 +23,15 @@ class Config(BaseCommand):
 	def run(self):
 		from connect.models import GlobalConfig
 
+		if self.options['-l']:
+			config = GlobalConfig.load()
+
+			if self.options['-c']:
+				print '\r\ncontainers > ' + ", ".join(config.containers)
+				print '\r\nrunning containers > ' + ", ".join(config.running_containers)
+				
+			return
+
 		config = GlobalConfig(self.options)
 
 		setup_webeoc = raw_input('Setup WebEOC? [yes/no]: ')
