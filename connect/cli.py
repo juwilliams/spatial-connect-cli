@@ -14,8 +14,8 @@ usage:
 
 arguments:
 	CONNECTION_NAME      Name of the new container
-	DESTINATION          Target System (WebEOC | ArcGIS) - Push Configuration
-	SOURCE               Source System (WebEOC | ArcGIS) - Pull Configuration
+	DESTINATION          Target System (WebEOC | ArcGIS | QGIS) - Push Configuration
+	SOURCE               Source System (WebEOC | ArcGIS | QGIS) - Pull Configuration
 	FORMAT               Response format from data source (See format section below)
 	GEOMETRY             Geometry type (point, polygon, line, polyline)
 	FIELD_FROM           Data field as described in data source
@@ -31,9 +31,9 @@ options:
   	-v, --version                                   Show version. 
   	-n CONNECTION_NAME --name=CONNECTION_NAME       Container Name 
   	-g GEOMETRY --geometry=GEOMETRY                 Geometry type (point, polygon, line, polyline)
-  	-d DESTINATION --dest=DESTINATION               Target System (WebEOC | ArcGIS) - Push Configuration 
-  	-s SOURCE --source=SOURCE                       Source item, i.e. featureclass name (WebEOC | ArcGIS) - Pull Configuration 
-	-f FORMAT --format=FORMAT                       Response format from data source 
+  	-d DESTINATION --dest=DESTINATION               Target System (WebEOC | ArcGIS | QGIS) - Push Configuration 
+  	-s SOURCE --source=SOURCE                       Source item, i.e. featureclass name (WebEOC | ArcGIS | QGIS) - Pull Configuration 
+	-f FORMAT --format=FORMAT                       Response format from data source (xml, kml, features, geojson, etc.)
 	-k KEY --key=KEY                                Key field used for relationships
 	-t                                              Transform response
 	-w, --wkid                                      ArcGIS featureclass WKID (default: 4326)
@@ -49,6 +49,7 @@ examples:
 
 formats:
 	arcgis               Data sourced from ArcGIS in features
+	QGIS 				 Data sourced from QGIS in features
 	webeoc               Data sourced from Intermedix WebEOC API in xml
 	webeoc_input         HTML generation for Intermedix Input View
 	webeoc_display       HTML generation for Intermedix Display View
