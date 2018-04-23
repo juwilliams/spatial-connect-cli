@@ -52,4 +52,11 @@ class Config(BaseCommand):
 			config.arcgis_keyword = raw_input('ArcGIS Keyword: ')
 			config.arcgis_version = raw_input('ArcGIS Version: ')
 
+		setup_qgis = raw_input('Setup QGIS [yes/no]: ')
+		if setup_qgis == 'yes' or setup_qgis == 'y':
+			config.qgis_username = raw_input('QGIS Database Username')
+			config.qgis_password = raw_input('QGIS Database Password')
+			config.qgis_server = raw_input('QGIS Database Server')
+			config.qgis_database = raw_input('QGIS Database Name')
+
 		config.write()
