@@ -57,6 +57,7 @@ class Config(BaseCommand):
 			config.qgis_username = raw_input('QGIS Database Username')
 			config.qgis_password = raw_input('QGIS Database Password')
 			config.qgis_server = raw_input('QGIS Database Server')
+			config.qgis_port = raw_input('QGIS Database Port')
 			config.qgis_database = raw_input('QGIS Database Name')
 
 		config.write()
