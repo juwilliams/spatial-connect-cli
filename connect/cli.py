@@ -82,11 +82,16 @@ def main():
 
 	options = docopt(__doc__, version=VERSION)
 
-	# iterate over registered commands and attempt to find one matching the user input
-	for k, v in options.iteritems():
-		if hasattr(commands, k) and v:
-			module = getattr(commands, k)
-			commands = getmembers(module, isclass)
-			command = [command[1] for command in commands if command[0] != 'BaseCommand'][0]
-			command = command(options)
-			command.run()
+	try:
+		# iterate over registered commands and attempt to find one matching the user input
+		for k, v in options.iteritems():
+			if hasattr(commands, k) and v:
+				module = getattr(commands, k)
+				commands = getmembers(module, isclass)
+				command = [command[1] for command in commands if command[0] != 'BaseCommand'][0]
+				command = command(options)
+				command.run()
+	except KeyboardInterrupt:
+		print('\r\n\r\nProcess aborted, exiting.\r\n')
+	except SystemExit, e:
+		print(e) 
