@@ -83,8 +83,11 @@ class Container(BaseModel):
 		self.createFile(self.push_dir + '/history.json', '{"uids" : []}')
 
 	@staticmethod
-	def load():
-		return jsonpickle.decode(Container.openFile('container.json'))
+	def load(directory):
+		if directory is None:
+			return jsonpickle.decode(Container.openFile('container.json'))
+		else:
+			return jsonpickle.decode(Container.openFile(directory + '/container.json'))
 
 	@staticmethod
 	def openFile(file_name):
