@@ -12,14 +12,14 @@ example:
 
 """
 
-from json import dumps
+from json import dumps, loads
 from .base_command import BaseCommand
 
 class Create(BaseCommand):
 	def run(self):
 		from connect.models import Container
 
-		print 'Creating new container > ' + self.options['CONNECTION_NAME']
+		print '\r\nCreating new container > ' + self.options['CONNECTION_NAME']
 		
 		container = Container(self.options)
 
@@ -29,4 +29,4 @@ class Create(BaseCommand):
 		#	serialize this container and output it to container.json
 		container.write()
 
-		print 'Container created > ' + container.json
+		print '\r\nCreate container done >\r\n' + dumps(loads(container.json), indent=4, sort_keys=True) + '\r\n'

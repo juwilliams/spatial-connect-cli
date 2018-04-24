@@ -11,11 +11,13 @@ usage:
 	connect removefield FIELD_FROM
 	connect generate FORMAT
 	connect reset COMMAND [COMMAND_VALUE]
+	connect pull
+	connect push
 
 arguments:
 	CONNECTION_NAME      Name of the new container
 	DESTINATION          Target System (WebEOC | ArcGIS | QGIS) - Push Configuration
-	SOURCE               Source System (WebEOC | ArcGIS | QGIS) - Pull Configuration
+	SOURCE               Source System (WebEOC | ArcGIS | QGIS | Url) - Pull Configuration
 	FORMAT               Response format from data source (See format section below)
 	GEOMETRY             Geometry type (point, polygon, line, polyline)
 	FIELD_FROM           Data field as described in data source
@@ -49,7 +51,8 @@ examples:
 
 formats:
 	arcgis               Data sourced from ArcGIS in features
-	QGIS 				 Data sourced from QGIS in features
+	QGIS                 Data sourced from QGIS in features
+	geojson              Data sourced from a geojson provider
 	webeoc               Data sourced from Intermedix WebEOC API in xml
 	webeoc_input         HTML generation for Intermedix Input View
 	webeoc_display       HTML generation for Intermedix Display View
