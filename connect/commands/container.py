@@ -71,6 +71,10 @@ class Container(BaseCommand):
 		container.geometry = command_value
 		container.write()
 
+	def source(self, command_value, container):
+		container.source = command_value
+		container.write()
+
 	option_commands = {
 		'file_in_archive' : fileInArchive,
 		'format' : format,
@@ -83,5 +87,6 @@ class Container(BaseCommand):
 		'view' : view,
 		'board' : board,
 		'transform' : transform,
-		'geometry' : geometry
+		'geometry' : geometry,
+		'source': source
 	}

@@ -19,12 +19,30 @@ class Pull(BaseCommand):
 		from connect.models import GlobalConfig
 		from connect.models import Container
 		from connect.models import Field
+		from connect.util import data
 
 		config = GlobalConfig.load()
 
-		# iterate over the registered containers and pull data for each
-		for container_name in config.containers:
-			container = Container.load(container_name)
-			container.serialize()
-			
-			print '\r\nContainer config >\r\n' + dumps(loads(container.json), indent=4, sort_keys=True) + '\r\n'
+		try:
+			# iterate over the registered containers and pull data for each
+			for container_name in config.containers:
+				container = Container.load(container_name)
+				
+				# register the container as running
+				config.running_containers.append(container_name)
+				config.write()
+
+				fetchedObj = data.fetchJsonAsObj(container.source)
+
+				for feature in fetchedObj.features:
+					print feature.geometry.coordinates
+		except Exception as e:
+			# clean out the running containers
+			print "error encountered while fetching data, see error log for details"
+
+			# throw the error up to the global cli error handler
+			raise e
+		finally:
+			config.running_containers = []
+			config.write()
+

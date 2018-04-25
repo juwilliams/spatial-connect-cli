@@ -67,6 +67,7 @@ sub-commands:
 	container update_only                         Modifies the update_only field in container.json
 	container has_attachments                     Modifies the has_attachments field in container.json
 	container transform 						  Modifies the transform field in container.json
+	container source                              Modifies the source field in the container.json
 	running                                       Used in reset command. Clears the running_containers property in config.json.
 
 help:

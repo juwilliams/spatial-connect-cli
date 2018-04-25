@@ -27,9 +27,10 @@ class Config(BaseCommand):
 			config = GlobalConfig.load()
 
 			if self.options['-c']:
-				print '\r\ncontainers > ' + ", ".join(config.containers)
-				print '\r\nrunning containers > ' + ", ".join(config.running_containers)
-				
+				print '\rcontainers > ' + ", ".join(config.containers)
+				print '\rrunning containers > ' + ", ".join(config.running_containers)
+				print '\r'
+
 			return
 
 		config = GlobalConfig(self.options)
