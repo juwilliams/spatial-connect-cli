@@ -37,8 +37,13 @@ class Pull(BaseCommand):
 
 				fetchedObj = data.fetchJsonAsObj(tokenizedSource)
 
-				for feature in fetchedObj.features:
-					print feature.properties
+				if container.format.lower() == 'geojson':
+					for feature in fetchedObj.features:					
+						print feature.properties
+				else:
+					for feature in fetchedObj.features:					
+						print feature.attributes
+				
 		except Exception as e:
 			# clean out the running containers
 			print "error encountered while fetching data, see error log for details"

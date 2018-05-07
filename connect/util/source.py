@@ -9,6 +9,6 @@ def replaceTokens(rawSource):
 def replaceDateTokens(rawSource):
 	now = datetime.datetime.now()
 
-	rawSource = rawSource.replace("[[YEAR]]", str(now.year)).replace("[[MONTH]]", str(now.month)).replace("[[DAY]]", str(now.day))
+	rawSource = rawSource.replace("[[YEAR]]", str(now.year)).replace("[[MONTH]]", str(now.strftime('%m'))).replace("[[DAY]]", str(now.strftime('%d')))
 
 	return rawSource

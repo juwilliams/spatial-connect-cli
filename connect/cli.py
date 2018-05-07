@@ -35,7 +35,7 @@ options:
   	-g GEOMETRY --geometry=GEOMETRY                 Geometry type (point, polygon, line, polyline)
   	-d DESTINATION --dest=DESTINATION               Target System (WebEOC | ArcGIS | QGIS) - Push Configuration 
   	-s SOURCE --source=SOURCE                       Source item, i.e. featureclass name (WebEOC | ArcGIS | QGIS) - Pull Configuration 
-	-f FORMAT --format=FORMAT                       Response format from data source (xml, kml, features, geojson, etc.)
+	-f FORMAT --format=FORMAT                       Response format from data source (xml, kml, features, geojson, json etc.)
 	-k KEY --key=KEY                                Key field used for relationships
 	-t                                              Transform response
 	-w, --wkid                                      ArcGIS featureclass WKID (default: 4326)
