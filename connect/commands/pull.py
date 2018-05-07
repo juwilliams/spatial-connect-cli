@@ -19,7 +19,7 @@ class Pull(BaseCommand):
 		from connect.models import GlobalConfig
 		from connect.models import Container
 		from connect.models import Field
-		from connect.util import data
+		from connect.util import data, source
 
 		config = GlobalConfig.load()
 
@@ -32,10 +32,13 @@ class Pull(BaseCommand):
 				config.running_containers.append(container_name)
 				config.write()
 
-				fetchedObj = data.fetchJsonAsObj(container.source)
+				tokenizedSource = source.replaceTokens(container.source)
+				print tokenizedSource
+
+				fetchedObj = data.fetchJsonAsObj(tokenizedSource)
 
 				for feature in fetchedObj.features:
-					print feature.geometry.coordinates
+					print feature.properties
 		except Exception as e:
 			# clean out the running containers
 			print "error encountered while fetching data, see error log for details"
