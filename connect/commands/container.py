@@ -75,7 +75,7 @@ class Container(BaseCommand):
 		container.source = command_value
 		container.write()
 
-	def source(self, command_value, container):
+	def where_clause(self, command_value, container):
 		container.where_clause = command_value
 		container.write()
 
