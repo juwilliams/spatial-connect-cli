@@ -75,6 +75,10 @@ class Container(BaseCommand):
 		container.source = command_value
 		container.write()
 
+	def source(self, command_value, container):
+		container.where_clause = command_value
+		container.write()
+
 	option_commands = {
 		'file_in_archive' : fileInArchive,
 		'format' : format,
@@ -88,5 +92,6 @@ class Container(BaseCommand):
 		'board' : board,
 		'transform' : transform,
 		'geometry' : geometry,
-		'source': source
+		'source': source,
+		'where_clause': where_clause
 	}

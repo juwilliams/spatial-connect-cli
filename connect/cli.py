@@ -15,18 +15,18 @@ usage:
 	connect push
 
 arguments:
-	CONNECTION_NAME      Name of the new container
-	DESTINATION          Target System (WebEOC | ArcGIS | QGIS) - Push Configuration
-	SOURCE               Source System (WebEOC | ArcGIS | QGIS | Url) - Pull Configuration
-	FORMAT               Response format from data source (See format section below)
-	GEOMETRY             Geometry type (point, polygon, line, polyline)
-	FIELD_FROM           Data field as described in data source
-	FIELD_TO             Data field as preferred in target system, defaults to FIELD_FROM if not supplied
-	FIELD_TYPE           Data field data type (default: text)
-	FIELD_LENGTH         Data field data length (default: 255)
-	KEY                  Key field used for relationships (default: id)
-	WKID                 ArcGIS featureclass WKID (default: 4326)
-	COMMAND              Sub-command (see values below)
+	CONNECTION_NAME                                 Name of the new container
+	DESTINATION                                     Target System (WebEOC | ArcGIS | QGIS) - Push Configuration
+	SOURCE                                          Source System (WebEOC | ArcGIS | QGIS | Url) - Pull Configuration
+	FORMAT                                          Response format from data source (See format section below)
+	GEOMETRY                                        Geometry type (point, polygon, line, polyline)
+	FIELD_FROM                                      Data field as described in data source
+	FIELD_TO                                        Data field as preferred in target system, defaults to FIELD_FROM if not supplied
+	FIELD_TYPE                                      Data field data type (default: text)
+	FIELD_LENGTH                                    Data field data length (default: 255)
+	KEY                                             Key field used for relationships (default: id)
+	WKID                                            ArcGIS featureclass WKID (default: 4326)
+	COMMAND                                         Sub-command (see values below)
 
 options:
   	-h, --help                                      Show this screen. 
@@ -41,8 +41,8 @@ options:
 	-w, --wkid                                      ArcGIS featureclass WKID (default: 4326)
 	-e, --extract                                   File in archive to extract
 	-r                                              Use relationships (maintains id and external id so updates are possible)
-	-l[c] 											List contents [c=containers]
-	--tag 											Field Tag
+	-l[c]                                           List contents [c=containers]
+	--tag                                           Field Tag
 
 examples:
   	connect create -n MyContainer -d WebEOC -f Features -t -i 15
@@ -50,25 +50,25 @@ examples:
   	connect config
 
 formats:
-	arcgis               Data sourced from ArcGIS in features
-	QGIS                 Data sourced from QGIS in features
-	geojson              Data sourced from a geojson provider
-	webeoc               Data sourced from Intermedix WebEOC API in xml
-	webeoc_input         HTML generation for Intermedix Input View
-	webeoc_display       HTML generation for Intermedix Display View
+	arcgis                                         Data sourced from ArcGIS in features
+	QGIS                                           Data sourced from QGIS in features
+	geojson                                        Data sourced from a geojson provider
+	webeoc                                         Data sourced from Intermedix WebEOC API in xml
+	webeoc_input                                   HTML generation for Intermedix Input View
+	webeoc_display                                 HTML generation for Intermedix Display View
 
 sub-commands:
-	container                                     Used in reset command. Rebuilds history.json, relationships.json and purges push/pull sub directories
-	container file_in_archive                     Modifies the file_in_archive field in container.json
-	container format                              Modifies the format field in container.json
-	container output_file                         Modifies the output_file field in container.json
-	container key                                 Modifies the key field in container.json
-	container relationships_dir                   Modifies the relationships_dir field in container.json
-	container update_only                         Modifies the update_only field in container.json
-	container has_attachments                     Modifies the has_attachments field in container.json
-	container transform 						  Modifies the transform field in container.json
-	container source                              Modifies the source field in the container.json
-	running                                       Used in reset command. Clears the running_containers property in config.json.
+	container                                      Used in reset command. Rebuilds history.json, relationships.json and purges push/pull sub directories
+	container file_in_archive                      Modifies the file_in_archive field in container.json
+	container format                               Modifies the format field in container.json
+	container output_file                          Modifies the output_file field in container.json
+	container key                                  Modifies the key field in container.json
+	container relationships_dir                    Modifies the relationships_dir field in container.json
+	container update_only                          Modifies the update_only field in container.json
+	container has_attachments                      Modifies the has_attachments field in container.json
+	container transform                            Modifies the transform field in container.json
+	container source                               Modifies the source field in the container.json
+	running                                        Used in reset command. Clears the running_containers property in config.json.
 
 help:
   	For help using this tool, please open an issue on the Github repository:
